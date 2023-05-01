@@ -1,0 +1,43 @@
+<mat-toolbar class="mytoolbar">
+    <mat-toolbar-row>
+        <a mat-button routerLink="/homepage/home">
+            Wisconsin Card Sorting Test
+        </a>
+        <div *ngIf= "val.orvos == true">
+        <button mat-button *ngFor="let item of categories" [routerLink]="[item.url]">
+            {{item.title}}&nbsp;
+            <mat-icon>{{item.icon}}</mat-icon>
+        </button>
+        
+      </div>
+
+      <div *ngIf= "val.orvos == false">
+        <button mat-button *ngFor="let item of pcategories" [routerLink]="[item.url]">
+            {{item.title}}&nbsp;
+            <mat-icon>{{item.icon}}</mat-icon>
+        </button>
+        
+      </div>
+      <span style="flex: 1 1;"></span>
+
+      <div text>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <img *ngIf="val.img" mat-card-avatar src={{val.img}}>
+          <img *ngIf="!val.img" mat-card-avatar src='assets/images/user.png'>
+            {{val.name}}&nbsp;
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/homepage/profil" >
+              <mat-icon>person</mat-icon>
+              <span>Profil</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+              <mat-icon>arrow_back</mat-icon>
+              <span>Kijelentkezés</span>
+            </button>
+          </mat-menu>
+          </div>
+    </mat-toolbar-row>
+</mat-toolbar>

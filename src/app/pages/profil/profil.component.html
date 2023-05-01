@@ -1,0 +1,57 @@
+<div class="container" style="flex-wrap: nowrap; height: 100%; justify-content: center; margin-top: 20px;">
+<div >
+    <mat-card style="background-color: lightslategray; margin-right: 10px;" class="log-card">
+    <form>
+        <h1>Profil</h1>
+        <br>
+
+        <div class="mb-2">
+          <label for="email" class="form-label">Email cím:</label>
+          <input type="email" class="form-control" name="email" readonly value = {{val.email}}>
+        </div>
+        
+        <div class="mb-2">
+          <label for="phone" class="form-label">Telefonszám:</label>
+          <input type="text" class="form-control" name="phone" value = {{val.phone}} [(ngModel)]="telefonszam">
+        </div>
+
+        <div class="mb-2">
+          <label for="fname" class="form-label">Név:</label>
+          <input type="text" class="form-control" name="fname" value = {{val.name}} [(ngModel)]="nev">
+        </div>
+  
+        <br>
+
+        <div *ngIf="val.orvos == true" class="mb-2">
+        <select class="form-select" readonly>
+          <option selected value>Orvos</option>
+        </select>
+      </div>
+      <div *ngIf="val.orvos == false" class="mb-2">
+        <select class="form-select" readonly>
+          <option selected value>Páciens</option>
+        </select>
+      </div>
+
+      <div style="text-align: left;" class="mb-3">
+        <label for="formFile" class="form-label">Kép kiválasztása:</label>
+        <input class="form-control" type="file" id="formFile" (change)="selectFile($event)">
+        <br>
+        <div style="display: flex;">
+        <button mat-raised-button style="margin-right: 5px;" class="max-width" type="button" id="log-gomb" (click)="upload()">Kép kiválasztása</button>
+        <button mat-raised-button class="max-width" type="button" id="log-gomb" (click)="upload()">Kép feltöltése</button>
+        </div>
+      </div>
+
+        <br>
+        <button mat-raised-button type="button" id="log-gomb" class="max-width" (click)="update()">Mentés</button>
+      </form>
+    </mat-card>
+</div>
+<div>
+    <mat-card style="justify-content: center;" class="log-card">
+      <h1 style="color: black;">Profil törlése:</h1>
+      <button mat-raised-button type="button" id="log-gomb" class="max-width" (click)="deleteUser()">Törlés</button>
+    </mat-card>
+</div>
+</div>

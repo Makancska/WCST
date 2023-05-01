@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+    background-color: #ECE8DB;
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, 
+    "Helvetica Neue", sans-serif; 
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 16px;
+}
+
+.centering{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    height: stretch;
+}
+
+.max-width {
+    width: 100%;
+}
+
+div > .log-card{
+    color: white;
+    padding: 10px;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+#log-gomb{
+    background-color: #ECE8DB;
+    color: lightslategrey;
+}
+
+#reg-gomb {
+    color: white;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.back{
+    width: 100%;
+    background-color: lightslategrey;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    min-height: 30px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+.back:hover{
+    background-color: lightslategrey;
+    color: black;
+    border: 2px solid black;
+}

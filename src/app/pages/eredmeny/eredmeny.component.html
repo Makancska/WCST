@@ -1,0 +1,54 @@
+<div class="container" *ngIf="(user.orvos) == true">
+    <mat-card class="mycard" *ngFor="let eredmeny of eredmenyList">  
+        <mat-card-actions style="cursor: pointer; justify-content: center;" (click)="openDialog(eredmeny.id)" appOnHover>
+            <mat-card-title style="text-align: left; vertical-align: top;">{{eredmeny.pac_name}} eredménye:</mat-card-title>
+            <img src="assets/images/vonal.png">
+            <div>
+                <mat-card-content>
+                Összes hibák száma: {{eredmeny.wrong}}
+                <br>
+                Összes jó válasz száma: {{eredmeny.good}}
+                <br>
+                Kitöltés ideje: {{eredmeny.when.toDate() | date:'yyyy/MM/dd HH:mm'}}
+                </mat-card-content>
+            </div>
+        </mat-card-actions>
+        <br>
+        <div *ngIf="eredmeny.comment">
+            <mat-card class="review">
+                Értékelés: {{eredmeny.comment}}
+                <div style="text-align: right;">
+                    <small>{{ eredmeny.comment_who }} </small>
+                    <small>{{ eredmeny.comment_date.toDate() | date:'short' }}</small>
+                </div>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>
+
+<div class="container" *ngIf="user.orvos == false">
+    <mat-card class="mycard" *ngFor="let eredmeny of sajatList">  
+        <mat-card-actions style="cursor: pointer; justify-content: center;" appOnHover>
+            <mat-card-title style="text-align: left; vertical-align: top;">{{eredmeny.pac_name}} eredménye:</mat-card-title>
+            <img src="assets/images/vonal.png">
+            <div>
+                <mat-card-content>
+                Összes hibák száma: {{eredmeny.wrong}}
+                <br>
+                Összes jó válasz száma: {{eredmeny.good}}
+                <br>
+                Kitöltés ideje: {{eredmeny.when.toDate() | date:'yyyy/MM/dd HH:mm'}}
+                </mat-card-content>
+            </div>
+        </mat-card-actions>
+        <div *ngIf="eredmeny.comment">
+            <mat-card class="review">
+                Értékelés: {{eredmeny.comment}}
+                <div style="text-align: right;">
+                    <small>{{ eredmeny.comment_who }} </small>
+                    <small>{{ eredmeny.comment_date.toDate() | date:'short' }}</small>
+                </div>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

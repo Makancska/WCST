@@ -1,0 +1,60 @@
+<div class="centering">
+    <mat-card style="background-color: lightslategray;" class="log-card">
+    <form>
+        <h1>Regisztráció</h1>
+        <br>
+
+        <div class="mb-2">
+          <label for="email" class="form-label">Email cím:</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="email">
+        </div>
+
+        <div class="mb-2">
+          <label for="password" class="form-label">Jelszó:</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+
+        <div class="mb-2">
+          <label for="password2" class="form-label">Jelszó megerősítése:</label>
+          <input type="password" class="form-control" name="password2" [(ngModel)]="password2">
+        </div>
+        
+        <div class="mb-2">
+          <label for="phone" class="form-label">Telefonszám:</label>
+          <input type="text" class="form-control" name="phone" [(ngModel)]="telefonszam">
+        </div>
+
+        <div class="mb-2">
+          <label for="fname" class="form-label">Név:</label>
+          <input type="text" class="form-control" name="fname" [(ngModel)]="nev">
+        </div>
+  
+        <br>
+
+        <div class="mb-2">
+        <select [(ngModel)]="szerep" class="form-select" [ngModelOptions]="{standalone: true}">
+          <option [ngValue]="0">Páciens</option>
+          <option [ngValue]="1">Orvos</option>
+        </select>
+      </div>
+
+      
+
+      <div style="text-align: left;" class="mb-3">
+        <label for="formFile" class="form-label">Kép kiválasztása:</label>
+        <input class="form-control" type="file" id="formFile" (change)="selectFile($event)">
+        <br>
+        <div style="display: flex;">
+        <button mat-raised-button style="margin-right: 5px;" class="max-width" type="button" id="log-gomb" (click)="upload()">Kép kiválasztása</button>
+        <button mat-raised-button class="max-width" type="button" id="log-gomb" (click)="upload()">Kép feltöltése</button>
+        </div>
+      </div>
+
+        <br>
+
+        <div><a routerLink="/login" mat-button id="reg-gomb" name="login">BEJELENTKEZÉS</a></div>
+            <br>
+            <button mat-raised-button type="button" id="log-gomb" class="max-width" (click)="registration()">Regisztráció</button>
+      </form>
+    </mat-card>
+</div>

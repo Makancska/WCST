@@ -1,0 +1,20 @@
+<div class="centering">
+    <mat-card style="background-color: lightslategray;" class="log-card">
+    <form>
+        <h3>Bejelentkezés</h3>
+        <br>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email cím:</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Jelszó:</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="password">
+        </div>
+        <br>
+        <div> <a routerLink="/registration" mat-button id="reg-gomb" name="registration">REGISZTRÁCIÓ</a></div>
+            <br>
+            <button mat-raised-button type="button" id="log-gomb" class="max-width" (click)="login()">Bejelentkezés</button>
+      </form>
+    </mat-card>
+</div>

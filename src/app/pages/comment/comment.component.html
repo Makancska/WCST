@@ -1,0 +1,11 @@
+<div style ="display: block;" class="container">
+    <div>
+        <label for="textarea" class="form-label">Értékelés:</label>
+        <textarea (keyup)="onKey($event)" class="form-control" id="textarea" rows="3"></textarea>
+    </div>
+    <br>
+    <div style="display: flex;">
+        <button style="margin-right: 5px;" class="back" (click)="close()">Mégsem</button>
+        <button class="back"(click)="save()">Mentés</button>
+    </div>
+</div>

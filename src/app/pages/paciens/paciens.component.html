@@ -1,0 +1,17 @@
+<div class="container">
+    <mat-card class="mycard" *ngFor="let paciens of userList" appOnHover>
+           
+        <mat-card-title style="text-align: left; vertical-align: top;">{{paciens.name}}</mat-card-title>
+        <mat-card-content>
+            <img mat-card-image *ngIf="paciens.img" src={{paciens.img}} alt="páciens profilképe">
+            <img mat-card-image *ngIf="!paciens.img" src='assets/images/nopic.png' alt="páciens profilképe">
+        <mat-card-footer>
+        <mat-card-actions id="reszletek-gomb" >
+            <button mat-icon-button (click)="openDialog(paciens.id)" >
+                <mat-icon>info</mat-icon>
+            </button>
+        </mat-card-actions>
+        </mat-card-footer>
+    </mat-card-content>
+    </mat-card>
+    </div>

@@ -1,0 +1,63 @@
+<div style="justify-content: space-evenly; flex-wrap: nowrap;" class="container">
+    <!-- Első kártya megjelenítése -->
+    <mat-card style="background-color: transparent;">
+        <mat-card-actions class="kartya" appOnHover>
+            <button (click)="first()" style="background-image: url(assets/images/cards/1-blue-circle.png);"></button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <div *ngIf="showFeedback">
+                <p *ngIf="isCorrect" style="color:green">Jó válasz! </p>
+                <p *ngIf="!isCorrect" style="color:red">Rossz válasz! </p>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+    <!-- Második kártya megjelenítése -->
+    <mat-card style="background-color: transparent;">
+        <mat-card-actions class="kartya" appOnHover>
+            <button (click)="second()" style="background-image: url(assets/images/cards/2-green-cross.png);"></button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <div *ngIf="showFeedback2">
+                <p *ngIf="isCorrect" style="color:green">Jó válasz! c: </p>
+                <p *ngIf="!isCorrect" style="color:red">Rossz válasz! :c </p>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+    <!-- Harmadik kártya megjelenítése -->
+    <mat-card style="background-color: transparent;">
+        <mat-card-actions class="kartya" appOnHover>
+            <button (click)="third()" style="background-image: url(assets/images/cards/3-red-star.png);"></button>
+        </mat-card-actions>
+        <mat-card-footer>
+            <div *ngIf="showFeedback3">
+                <p *ngIf="isCorrect" style="color:green">Jó válasz! c: </p>
+                <p *ngIf="!isCorrect" style="color:red">Rossz válasz! :c </p>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+    <!--Negyedik kártya megjelenítése -->
+    <mat-card style="background-color: transparent;">
+        <mat-card-actions class="kartya" appOnHover>
+            <button (click)="fourth()" style="background-image: url(assets/images/cards/4-yellow-triangle.png);"></button>
+        </mat-card-actions>
+        <mat-card-footer>
+        <div *ngIf="showFeedback4">
+            <p *ngIf="isCorrect" style="color:green">Jó válasz! c: </p>
+            <p *ngIf="!isCorrect" style="color:red">Rossz válasz! :c </p>
+        </div>
+        </mat-card-footer>
+    </mat-card>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+ <!-- Saját kártya megjelenítése -->
+<div style="display: flex; justify-content: center;">
+    <mat-card class="kartya">
+        <img src="{{card.img}}"> 
+    </mat-card>
+</div>

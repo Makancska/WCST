@@ -1,0 +1,45 @@
+<mat-card style="margin-top: 10px;" class="container">
+    <mat-card-title> WCST teszt kitöltése:  </mat-card-title>
+    <mat-card-content>
+        <p>
+            A tesztben a kártyákat a számuk, a formájuk vagy a színük alapján kell rendezni.
+            A tesztet kitöltő személy nem ismeri a szabályt, egyedül a visszajelzések alapján kell kikövetkeztetnie. 
+            Ezeket a visszajelzéseket minden kártyapárosítás után láthatod. Bizonyos időközönként ez a szabály változik.
+        </p>
+        <p>
+            Elrendezés: Felül 4 db kártya közül tudsz választani, ezeken a kártyákon mind különböző színt, számot és formát 
+            találhatsz. 
+        </p>
+        <div style="display: flex; justify-content: space-evenly;">
+            <img src="assets/images/cards/1-blue-circle.png">
+            <img src="assets/images/cards/2-green-cross.png">
+            <img src="assets/images/cards/3-red-star.png">
+            <img src="assets/images/cards/4-yellow-triangle.png">
+        </div>
+        <br>
+        <p>
+            Ezek a kártyák alatt találod meg a saját kártyádat, ami minden párosítás után változik. 
+            Párosítani úgy tudsz, hogy rákattintasz az épp szabálynak megfelelő azonos felső lapra.
+            Tehát ha neked ez a kártyád:
+        </p>
+        <div style="justify-content: center; display: flex; align-content: center;" >
+            <img src="assets/images/cards/pelda.png">
+        </div>
+        <br>
+        <p>
+            Akkor ha a szabály jelen pillanatban szám lenne, abban az esetben a 2. lapra kattintasz, ami 2 db zöld keresztet ábrázol.
+            De ha mondjuk, a szín a szabályunk, akkor értelemszerűen a piros lapra kattintasz rá, ami a 3. kártya.
+            És így tovább a formával is, ami az 1. kártyával azonos.
+        </p>
+        <p>
+            A teszt akkor ér véget, amikor a beállított lapok mennyisége elfogy. A végén egy értesítés formájában
+            láthatod az elért eredményed, de később is megtekintheted az eredmények fülön. Itt lehetősége van az 
+            orvosoknak értékelést fűzni a tesztedhez, ezt majd a teszteredményed alatt fogod látni. Ha nem látsz semmit,
+            akkor valószínűleg még senki sem értékelte. Az értékelésben látod az orvos hozzászólását, illetve a lenti mezőkön 
+            szerepel az értékelő orvos neve és hogy mikor értékelte.  
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button class="back" (click)="redirect()"> Teszt kitöltése </button>
+    </mat-card-actions>
+</mat-card>
